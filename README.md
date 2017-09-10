@@ -1,0 +1,4 @@
+# xi
+```sh
+./gradlew run
+```
