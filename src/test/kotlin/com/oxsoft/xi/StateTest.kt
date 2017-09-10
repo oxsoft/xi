@@ -43,4 +43,12 @@ class StateTest {
         Assert.assertEquals(null, State(listOf(dice3, dice3.copy(x = 1)), 0, 0).calcVanishNumber())
         Assert.assertEquals(6, State(listOf(dice6, dice6.copy(x = 1), dice6.copy(y = 1), dice6.copy(x = 1, y = 1), dice6.copy(x = 2), dice6.copy(y = 2)), 0, 0).calcVanishNumber())
     }
+
+    @Test
+    fun testCalcLeastStep() {
+        Assert.assertEquals(0, State(listOf(Dice(6, 2, 0, 0)), 0, 0).calcLeastStep())
+        Assert.assertEquals(1, State(listOf(Dice(5, 1, 0, 0)), 0, 0).calcLeastStep())
+        Assert.assertEquals(2, State(listOf(Dice(1, 2, 0, 0)), 0, 0).calcLeastStep())
+        Assert.assertEquals(3, State(listOf(Dice(5, 6, 0, 0)), 0, 0).calcLeastStep())
+    }
 }

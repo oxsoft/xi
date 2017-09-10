@@ -44,6 +44,18 @@ data class State(val dices: List<Dice>, val x: Int, val y: Int, val step: Int = 
         return null
     }
 
+    fun calcLeastStep(pip: Pip = Pip.SIX): Int = dices.map {
+        when {
+            it.top == pip -> 0
+            it.bottom == pip -> 2
+            it.x == 0 && it.right == pip -> 3
+            it.x == WIDTH - 1 && it.left == pip -> 3
+            it.y == 0 && it.back == pip -> 3
+            it.y == HEIGHT - 1 && it.front == pip -> 3
+            else -> 1
+        }
+    }.sum()
+
     override fun toString(): String = dices.toField(WIDTH, HEIGHT).joinToString(separator = "\n", transform = { it.joinToString(separator = "", transform = { it?.top?.value?.toString() ?: "." }) })
 
     fun toHistory(): List<State> {

@@ -5,10 +5,10 @@ import java.util.*
 object Main {
     @JvmStatic
     fun main(vararg args: String) {
-        breadthFirstSearch(Stage.AAD)
+        breadthFirstSearch(Stage.AAD, 15)
     }
 
-    private fun breadthFirstSearch(stage: State) {
+    private fun breadthFirstSearch(stage: State, depth: Int = 20) {
         val queue: Queue<State> = LinkedList(listOf(stage))
         var step = -1
         while (true) {
@@ -24,8 +24,8 @@ object Main {
                 println(answer.toHistory().joinToString("\n\n"))
                 break
             }
-            if (state.step == 20) continue
-            queue.addAll(nextStates.filter { it.calcVanishNumber() == null })
+            if (state.step == depth) continue
+            queue.addAll(nextStates.filter { it.calcVanishNumber() == null }.filter { state.step + it.calcLeastStep() <= depth })
         }
     }
 }

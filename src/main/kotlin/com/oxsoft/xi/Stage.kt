@@ -30,6 +30,7 @@ object Stage {
             Dice(2, 3, 3, 2)
     ), 1, 2)
 
+    // 12 step
     val AAD = State(listOf(
             Dice(4, 5, 1, 0),
             Dice(2, 1, 2, 0),
