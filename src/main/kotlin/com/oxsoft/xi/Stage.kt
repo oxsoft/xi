@@ -11,6 +11,7 @@ object Stage {
             Dice(1, 2, 2, 3)
     ), 1, 1)
 
+    // 10 step
     val AAB = State(listOf(
             Dice(5, 4, 3, 0),
             Dice(3, 5, 0, 1),
@@ -29,6 +30,16 @@ object Stage {
             Dice(2, 3, 3, 2)
     ), 1, 2)
 
+    val AAD = State(listOf(
+            Dice(4, 5, 1, 0),
+            Dice(2, 1, 2, 0),
+            Dice(4, 6, 3, 0),
+            Dice(4, 5, 1, 1),
+            Dice(2, 6, 1, 2),
+            Dice(6, 5, 2, 2)
+    ), 1, 1)
+
+    // 12 step
     val CCB = State(listOf(
             Dice(6, 2, 1, 0),
             Dice(6, 2, 2, 0),
@@ -38,6 +49,7 @@ object Stage {
             Dice(2, 1, 2, 3)
     ), 2, 3)
 
+    // 8 step
     val GBI = State(listOf(
             Dice(1, 4, 2, 1),
             Dice(4, 1, 3, 1),

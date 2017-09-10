@@ -5,7 +5,7 @@ import java.util.*
 object Main {
     @JvmStatic
     fun main(vararg args: String) {
-        breadthFirstSearch(Stage.AAC)
+        breadthFirstSearch(Stage.AAD)
     }
 
     private fun breadthFirstSearch(stage: State) {
@@ -20,6 +20,7 @@ object Main {
             val nextStates = state.getNextStates()
             val answer = nextStates.find { it.calcVanishNumber() == 6 }
             if (answer != null) {
+                println("solve at step ${answer.step}")
                 println(answer.toHistory().joinToString("\n\n"))
                 break
             }
