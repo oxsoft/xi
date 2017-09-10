@@ -5,7 +5,7 @@ import java.util.*
 object Main {
     @JvmStatic
     fun main(vararg args: String) {
-        breadthFirstSearch(Stage.AAA, 16)
+        breadthFirstSearch(Stage.AAF, 16)
     }
 
     private fun breadthFirstSearch(stage: State, depth: Int = 20) {

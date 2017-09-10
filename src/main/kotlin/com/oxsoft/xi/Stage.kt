@@ -1,5 +1,8 @@
 package com.oxsoft.xi
 
+/**
+ * http://www.venus.dti.ne.jp/~manabe-a/xi/
+ */
 @Suppress("unused")
 object Stage {
     // 16 step
@@ -41,6 +44,26 @@ object Stage {
             Dice(2, 6, 1, 2),
             Dice(6, 5, 2, 2)
     ), 1, 1)
+
+    // 16 step
+    val AAE = State(listOf(
+            Dice(2, 1, 0, 0),
+            Dice(3, 2, 0, 1),
+            Dice(3, 2, 0, 2),
+            Dice(4, 2, 1, 3),
+            Dice(6, 5, 2, 3),
+            Dice(2, 1, 3, 3)
+    ), 3, 3)
+
+    // 12 step
+    val AAF = State(listOf(
+            Dice(3, 5, 1, 1),
+            Dice(2, 4, 2, 1),
+            Dice(4, 1, 0, 2),
+            Dice(5, 1, 2, 2),
+            Dice(3, 6, 0, 3),
+            Dice(2, 4, 1, 3)
+    ), 2, 2)
 
     // 12 step
     val CCB = State(listOf(
