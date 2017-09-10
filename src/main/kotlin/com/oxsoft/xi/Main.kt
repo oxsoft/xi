@@ -5,14 +5,18 @@ import java.util.*
 object Main {
     @JvmStatic
     fun main(vararg args: String) {
-        breadthFirstSearch(Stage.AAD, 15)
+        breadthFirstSearch(Stage.AAA, 16)
     }
 
     private fun breadthFirstSearch(stage: State, depth: Int = 20) {
         val queue: Queue<State> = LinkedList(listOf(stage))
         var step = -1
         while (true) {
-            val state = queue.remove()
+            val state = queue.poll()
+            if (state == null) {
+                println("cannot solve in $depth step")
+                break
+            }
             if (state.step > step) {
                 step = state.step
                 println("step $step (${queue.size + 1})")
@@ -24,8 +28,8 @@ object Main {
                 println(answer.toHistory().joinToString("\n\n"))
                 break
             }
-            if (state.step == depth) continue
-            queue.addAll(nextStates.filter { it.calcVanishNumber() == null }.filter { state.step + it.calcLeastStep() <= depth })
+            if (nextStates.firstOrNull()?.step == depth) continue
+            queue.addAll(nextStates.filter { it.calcVanishNumber() == null }.filter { it.step + it.calcLeastStep() <= depth })
         }
     }
 }

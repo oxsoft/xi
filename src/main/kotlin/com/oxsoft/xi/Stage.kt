@@ -2,6 +2,7 @@ package com.oxsoft.xi
 
 @Suppress("unused")
 object Stage {
+    // 16 step
     val AAA = State(listOf(
             Dice(4, 6, 0, 0),
             Dice(2, 6, 3, 0),
@@ -21,6 +22,7 @@ object Stage {
             Dice(5, 6, 3, 3)
     ), 3, 3)
 
+    // 13 step
     val AAC = State(listOf(
             Dice(2, 1, 1, 0),
             Dice(6, 2, 0, 1),
